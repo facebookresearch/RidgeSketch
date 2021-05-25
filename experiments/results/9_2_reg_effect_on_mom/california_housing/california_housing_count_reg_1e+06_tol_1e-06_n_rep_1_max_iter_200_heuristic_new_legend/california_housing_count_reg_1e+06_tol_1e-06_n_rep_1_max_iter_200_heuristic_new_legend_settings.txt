@@ -1,0 +1,1 @@
+Settings: {'dataset_name': 'california_housing', 'regularizer': 1074285.8472902912, 'tolerance': 1e-06, 'is_kernel': False, 'n_repetitions': 1, 'solvers': ['count'], 'sketch_sizes': [2], 'sketch_size_formulas': ['m/4']}

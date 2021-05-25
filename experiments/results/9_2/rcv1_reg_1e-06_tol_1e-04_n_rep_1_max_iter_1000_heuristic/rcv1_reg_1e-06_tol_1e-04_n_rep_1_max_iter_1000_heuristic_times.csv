@@ -1,0 +1,3 @@
+,run_name,solver,sketch_size_formula,sketch_size,time (median),time (1st quartile),time (3rd quartile)
+0,inc_mom,subsample,m^(2/3),1307,832.7112731870002,832.7112731870002,832.7112731870002
+1,inc_mom,count,m^(2/3),1307,513.529742011,513.529742011,513.529742011

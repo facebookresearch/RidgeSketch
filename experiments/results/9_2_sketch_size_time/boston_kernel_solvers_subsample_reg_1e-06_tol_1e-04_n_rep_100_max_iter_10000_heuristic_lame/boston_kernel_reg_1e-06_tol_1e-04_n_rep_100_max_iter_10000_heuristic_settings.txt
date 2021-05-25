@@ -1,0 +1,1 @@
+Settings: {'dataset_name': 'boston', 'regularizer': 1e-06, 'tolerance': 0.0001, 'is_kernel': True, 'n_repetitions': 100, 'solvers': ['subsample'], 'sketch_sizes': [51, 253, 455], 'sketch_size_formulas': ['10%', '50%', '90%']}

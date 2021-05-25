@@ -1,0 +1,1 @@
+Settings: {'dataset_name': 'rcv1', 'regularizer': 1e-06, 'tolerance': 0.0001, 'is_kernel': False, 'n_repetitions': 10, 'solvers': ['subsample', 'count'], 'sketch_sizes': [1307, 11809, 23618], 'sketch_size_formulas': ['m^(2/3)', 'm/4', 'm/2']}
