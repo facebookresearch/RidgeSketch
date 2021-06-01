@@ -23,7 +23,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install flake8
-          cd ridge_sketch && pip install -r requirements.txt
+          pip install -r requirements.txt
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
@@ -32,4 +32,4 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          cd ridge_sketch && python -m pytest tests/ --runslow
+          python -m pytest tests/ --runslow
