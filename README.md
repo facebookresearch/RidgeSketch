@@ -53,6 +53,8 @@ Tutorial notebooks for running and adding new sketches are in the `tutorials` su
 
 ## Advanced Usage
 
+Please visit our [documentation](https://ridge-sketch.readthedocs.io/en/latest/) for API details.
+
 ### Run Benchmarks
 
 To run benchmarks:
