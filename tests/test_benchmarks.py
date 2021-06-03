@@ -100,7 +100,7 @@ class TestBenchmarks:
             result = runner.invoke(
                 run, ["small", "--save", "--n-repetitions=1", f"--folder={folder}"],
             )
-        assert result.exit_code == 0
+        assert result.exit_code == 0, print(result)
 
 
 class TestConfigs:
