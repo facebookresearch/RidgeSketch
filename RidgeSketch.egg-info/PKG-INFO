@@ -7,7 +7,9 @@ Author: UNKNOWN
 Author-email: UNKNOWN
 License: UNKNOWN
 Description: # RidgeSketch
-        An open source package in Python for solving large scale ridge regression using the sketch-and-project technique
+        An open source package in Python for solving large scale ridge regression using the sketch-and-project technique. 
+        
+        For details, see the [RidgeSketch paper](https://arxiv.org/abs/2105.05565). 
         
         RidgeSketch aims to match the Scikit-learn API:
         ```
@@ -35,7 +37,7 @@ Description: # RidgeSketch
         ### Setup a virtual environment
         Create a [Python 3 virtual environment](https://docs.python.org/3/tutorial/venv.html).
         
-        For Unix or MacOS this can be done by executing: `source activate [env name]`
+        For Unix or MacOS this can be done by executing: `source activate [env name]`. Then,
         1. `python3 -m venv ridgesketch-env`
         2. `source activate ridgesketch-env/bin/activate`
         
@@ -44,7 +46,22 @@ Description: # RidgeSketch
         
         Tutorial notebooks for running and adding new sketches are in the `tutorials` subdirectory.
         
+        ## Citation
+        
+        ```
+        @misc{gazagnadou2021textttridgesketch,
+              title={$\texttt{RidgeSketch}$: A Fast sketching based solver for large scale ridge regression}, 
+              author={Nidham Gazagnadou and Mark Ibrahim and Robert M. Gower},
+              year={2021},
+              eprint={2105.05565},
+              archivePrefix={arXiv},
+              primaryClass={math.OC}
+        }
+        ```
+        
         ## Advanced Usage
+        
+        Please visit our [documentation](https://ridge-sketch.readthedocs.io/en/latest/) for API details.
         
         ### Run Benchmarks
         
@@ -75,39 +92,33 @@ Description: # RidgeSketch
            - '_sparse_format' : format ("dense", "csr" or "csc") of the design matrix X
         3. Try to run a benchmark with this dataset by following previous section
         
+        
+        ### Add a Custom Sketching Method
+        
+        To create your own sketching method, inherit from `Sketch` and implement `sketch()` and `update_iterate()`:
+        
+        ```python
+        
+        from sketching import Sketch
+        
+        class MySketch(Sketch):
+        
+          def __init__(self, A, b, sketch_size):
+            super().__init__(A, b, sketch_size)
+        
+          def sketch(self, r):
+            """Returns a tuple of (SA, SAS, rs)"""
+            pass
+        
+          def update_iterate(self, w, lmbda, step_size=1.0):
+            """Returns updated weights"""
+            pass
+        ```
+        
         ## Contributing
         
-        ### To Run Tests
-        [PyTest](https://docs.pytest.org/en/latest/) is our testing framekwork.
+        See the [CONTRIBUTING](CONTRIBUTING.md) file for how to help out.
         
-        Run all test: `pytest ` from the parent directory.
-        
-        Test coverage report: `pytest --cov-config=.coveragerc --cov=. --runslow`
-        
-        ### Branch Development Workflow
-        
-        1. `git checkout -b feature-name`
-        2. commit work as usual to your branch
-        3. `git push origin feature-name`
-        4. create a pull request for merging into master
-           - others can review / comment on code before merging
-        
-        Code formatting uses [Black](https://black.readthedocs.io/en/stable/).
-        To run manually: `black .` from the parent directory.
-        - This should automatically run as a pre-commit hook
-        
-        To store requirements: `pip freeze --exclude-editable > requirements.txt`
-        
-        ### Generate Documentation
-        
-        Install Sphinx `pip install sphinx`. From the `docs` directory,
-        
-        1. `sphinx-build -b html . _build`
-        2. `make html`
-        
-        To view docs: `open _build/index.html`
-        
-        To edit the contents change `index.rst`
         
         # License
         
