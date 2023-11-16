@@ -89,7 +89,7 @@ terminado==0.10.0
 testpath==0.5.0
 threadpoolctl==2.1.0
 toml==0.10.2
-tornado==6.1
+tornado>=6.1
 tqdm==4.61.0
 traitlets==5.0.5
 urllib3>=1.26.5
